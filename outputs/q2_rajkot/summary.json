@@ -1,0 +1,22 @@
+{
+  "annual_mean_radiance_city_p75_nW_sr_cm2": 19.365984829989348,
+  "city": "Rajkot",
+  "estimated_population_in_high_radiance_q3": 500539.72966156004,
+  "estimated_total_population_worldpop": 984821.4804180595,
+  "year": 2020,
+  "population_share_in_high_radiance_q3_percent": 50.82542771600387,
+  "interpretation_note": "Population residing in city-specific upper-quartile annual mean radiance pixels; not individual exposure, household lighting, wealth, safety, or electricity access.",
+  "boundary_source": "Rajkot (M.COP), ULB code 802501, from SBM_ULBs.geojsonl in the Indian administrative boundaries urban release; access date is not recorded in the source metadata.",
+  "dataset_sources": [
+    "NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG",
+    "WorldPop/GP/100m/pop"
+  ],
+  "source_urls": [
+    "https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG",
+    "https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop",
+    "https://github.com/ramSeraph/indian_admin_boundaries/releases/tag/urban"
+  ],
+  "method_note": "Annual mean of 2020 monthly avg_rad images. Upper-quartile radiance mask is at ~464 m VIIRS scale; the 2020 India WorldPop image is selected by year, country and Rajkot footprint. Its ~100 m population cells are masked by the VIIRS quartile zone during the population reduction, so grid alignment/resampling matters. Map rasters are smoothed for display only.",
+  "quality_note": "Mean cf_cvg is exported by month to monthly_mean_radiance.csv. Check low coverage before interpreting monthly changes; zero avg_rad is not automatically 'no lights'. Pixels below 0.2 nW/sr/cm\u00b2 are made transparent in maps for display only.",
+  "discussion_note": "WorldPop estimates 984,821 residents within the Rajkot ULB boundary; 500,540 (50.8%) reside in pixels at or above the annual city-level 75th-percentile radiance threshold. The top-radiance zone is defined by radiance, not by population, so its population share need not be 25%. Monthly city-mean radiance ranges from 8.33 nW/sr/cm\u00b2 in 2020-08 to 16.01 nW/sr/cm\u00b2 in 2020-01; interpret the late-monsoon lows cautiously because cloud-free observation coverage is also low. This is an area-based proxy for residence in brighter pixels, not personal light exposure or a measure of wealth, safety, or electricity access."
+}

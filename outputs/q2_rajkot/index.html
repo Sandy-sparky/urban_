@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rajkot night-time lights 2020</title><style>
+body{margin:0;background:#0b1220;color:#e8eefc;font-family:Arial,sans-serif}main{max-width:1100px;margin:auto;padding:28px 18px}
+h1{margin:0 0 4px}p.s{color:#9fb0cf;margin-top:0}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+.c{background:#131d36;border-radius:14px;padding:14px}.c small{display:block;color:#9fb0cf}.c b{font-size:24px}
+.p{background:#131d36;border-radius:14px;padding:14px;margin:16px 0}img{max-width:100%;border-radius:10px}
+iframe{width:100%;height:560px;border:0;border-radius:10px}a{color:#fe9f6d;margin-right:10px}.l a{display:inline-block;margin:4px 8px 4px 0}
+.n{color:#9fb0cf;font-size:13px}</style></head><body><main>
+<h1>Rajkot · Night-time lights 2020</h1><p class="s">VIIRS monthly radiance and WorldPop population</p>
+<div class="g"><div class="c"><small>Total population</small><b>984,821</b></div><div class="c"><small>In upper-quartile light</small><b>500,540</b></div><div class="c"><small>Population share</small><b>50.8%</b></div><div class="c"><small>City Q3 threshold</small><b>19.37</b></div></div>
+<div class="p"><h3>Annual map: radiance, upper-quartile zone, population</h3><iframe src="annual_radiance_and_high_quartile_map.html"></iframe></div>
+<div class="p"><h3>Monthly explorer (slider + play)</h3><iframe src="monthly_explorer.html"></iframe></div>
+<div class="p"><h3>Animation</h3><img src="monthly_viirs_2020.gif" alt="Monthly VIIRS animation"></div>
+<div class="p"><h3>Monthly mean radiance and data quality</h3><img src="monthly_mean_radiance.png" alt="Monthly chart"></div>
+<div class="p"><h3>Individual monthly maps</h3><div class="l"><a href="monthly_2020-01.html">2020-01</a><a href="monthly_2020-02.html">2020-02</a><a href="monthly_2020-03.html">2020-03</a><a href="monthly_2020-04.html">2020-04</a><a href="monthly_2020-05.html">2020-05</a><a href="monthly_2020-06.html">2020-06</a><a href="monthly_2020-07.html">2020-07</a><a href="monthly_2020-08.html">2020-08</a><a href="monthly_2020-09.html">2020-09</a><a href="monthly_2020-10.html">2020-10</a><a href="monthly_2020-11.html">2020-11</a><a href="monthly_2020-12.html">2020-12</a></div></div>
+<div class="p"><h3>Population exposure discussion</h3><p>WorldPop estimates 984,821 residents within the Rajkot ULB boundary; 500,540 (50.8%) reside in pixels at or above the annual city-level 75th-percentile radiance threshold. The top-radiance zone is defined by radiance, not by population, so its population share need not be 25%. Monthly city-mean radiance ranges from 8.33 nW/sr/cm² in 2020-08 to 16.01 nW/sr/cm² in 2020-01; interpret the late-monsoon lows cautiously because cloud-free observation coverage is also low. This is an area-based proxy for residence in brighter pixels, not personal light exposure or a measure of wealth, safety, or electricity access.</p>
+<p class="n">Population residing in city-specific upper-quartile annual mean radiance pixels; not individual exposure, household lighting, wealth, safety, or electricity access.<br>Annual mean of 2020 monthly avg_rad images. Upper-quartile radiance mask is at ~464 m VIIRS scale; the 2020 India WorldPop image is selected by year, country and Rajkot footprint. Its ~100 m population cells are masked by the VIIRS quartile zone during the population reduction, so grid alignment/resampling matters. Map rasters are smoothed for display only.<br>Mean cf_cvg is exported by month to monthly_mean_radiance.csv. Check low coverage before interpreting monthly changes; zero avg_rad is not automatically 'no lights'. Pixels below 0.2 nW/sr/cm² are made transparent in maps for display only.<br>
+Boundary: Rajkot (M.COP), ULB code 802501, from SBM_ULBs.geojsonl in the Indian administrative boundaries urban release; access date is not recorded in the source metadata.</p>
+<p class="n">Sources: <a href="https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG">VIIRS</a> · 
+<a href="https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop">WorldPop</a> · 
+<a href="https://github.com/ramSeraph/indian_admin_boundaries/releases/tag/urban">ULB boundary release</a></p></div></main></body></html>

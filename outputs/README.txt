@@ -1,0 +1,1 @@
+Generated outputs are intentionally absent until the scripts are run with real QField observations, a verified city boundary and authenticated Earth Engine. The scripts create web-ready output copies here.
