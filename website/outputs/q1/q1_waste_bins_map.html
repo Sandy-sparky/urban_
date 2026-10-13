@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3488241df3e002c17e509ed79b265073 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    <div style="position:fixed;top:14px;left:60px;z-index:9999;max-width:290px;
+        background:rgba(255,255,255,.92);backdrop-filter:blur(10px);padding:12px 16px;
+        border-radius:14px;box-shadow:0 6px 24px #0003;font:13px Arial;color:#172033">
+        <div style="font-weight:700;font-size:15px">Waste-bin observations</div>
+        <div style="color:#536178;margin-bottom:4px">QField survey &middot; 44 records</div>
+        <div style="font-weight:600;margin-top:6px">Collected by</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><span style="width:12px;height:12px;border-radius:50%;background:#72b026;display:inline-block"></span><span>Sandeepan Podder (44)</span></div>
+        <div style="font-size:11px;color:#6b7280;margin-top:8px">Hover a marker for a photo preview,
+        click for full details. Data from other students is acknowledged in the popup.</div></div>
+    
+            <div class="folium-map" id="map_3488241df3e002c17e509ed79b265073" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3488241df3e002c17e509ed79b265073 = L.map(
+                "map_3488241df3e002c17e509ed79b265073",
+                {
+                    center: [13.713110017566775, 79.59149208299783],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_3488241df3e002c17e509ed79b265073);
+
+            
+
+        
+    
+            var tile_layer_757d668b6d2cb2b9286b6e42d843c697 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_757d668b6d2cb2b9286b6e42d843c697.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var tile_layer_aac370defeeb030cec45d51485c3a387 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aac370defeeb030cec45d51485c3a387.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var tile_layer_a332427e03168d9e71c81deb48d54ed6 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a332427e03168d9e71c81deb48d54ed6.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var tile_layer_c72ac1f2086b029fa40fad82a05b4f6a = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c72ac1f2086b029fa40fad82a05b4f6a.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var marker_cluster_271b26955346a9baabd639c00c7b50b1 = L.markerClusterGroup(
+                {
+  "maxClusterRadius": 40,
+}
+            );
+        
+    
+            marker_cluster_271b26955346a9baabd639c00c7b50b1.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0 = L.featureGroup.subGroup(
+                marker_cluster_271b26955346a9baabd639c00c7b50b1
+            );
+        
+    
+            var marker_87a29410a13ab90eb48c857d79aec4cb = L.marker(
+                [13.7223269, 79.59528309999999],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_f4119852c8a8adab409a4536f6772ae0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2a195bec1eaa0723fb5f0f923b05115 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2c6855ef5b16a5f474a9a85b7e0457bd = $(`<div id="html_2c6855ef5b16a5f474a9a85b7e0457bd" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB1</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.722327, 79.595283</p>       <a href="../../assets/q1_photos/001_DB1.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/001_DB1.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_b2a195bec1eaa0723fb5f0f923b05115.setContent(html_2c6855ef5b16a5f474a9a85b7e0457bd);
+            
+        
+
+        marker_87a29410a13ab90eb48c857d79aec4cb.bindPopup(popup_b2a195bec1eaa0723fb5f0f923b05115)
+        ;
+
+        
+    
+    
+            marker_87a29410a13ab90eb48c857d79aec4cb.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB1<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/001_DB1.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87a29410a13ab90eb48c857d79aec4cb.setIcon(icon_f4119852c8a8adab409a4536f6772ae0);
+            
+    
+            var marker_76c529b0bbc8f59c24682112590e76cc = L.marker(
+                [13.71441, 79.59445666666664],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_d96d8dff2275fe0eb4e593710a154a2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e3fb924c939341e8df370454aede61ea = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_22abc6a7a9bc30c995d959e6aad52953 = $(`<div id="html_22abc6a7a9bc30c995d959e6aad52953" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 2</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714410, 79.594457</p>       <a href="../../assets/q1_photos/003_DB2.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/003_DB2.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (DB2). Not the original photo for this point.</p></div></div>`)[0];
+                popup_e3fb924c939341e8df370454aede61ea.setContent(html_22abc6a7a9bc30c995d959e6aad52953);
+            
+        
+
+        marker_76c529b0bbc8f59c24682112590e76cc.bindPopup(popup_e3fb924c939341e8df370454aede61ea)
+        ;
+
+        
+    
+    
+            marker_76c529b0bbc8f59c24682112590e76cc.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 2<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/003_DB2.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_76c529b0bbc8f59c24682112590e76cc.setIcon(icon_d96d8dff2275fe0eb4e593710a154a2d);
+            
+    
+            var marker_c470d1256349a427bb8895958a7e659f = L.marker(
+                [13.714516666666665, 79.59435166666665],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_1564a5ddb03c2fe8c741441ce09efb0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73948c0bf3c8ccfef53d4554677ff5f1 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3042d628356d0be15afcff1f6dd1f537 = $(`<div id="html_3042d628356d0be15afcff1f6dd1f537" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB2</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714517, 79.594352</p>       <a href="../../assets/q1_photos/003_DB2.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/003_DB2.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_73948c0bf3c8ccfef53d4554677ff5f1.setContent(html_3042d628356d0be15afcff1f6dd1f537);
+            
+        
+
+        marker_c470d1256349a427bb8895958a7e659f.bindPopup(popup_73948c0bf3c8ccfef53d4554677ff5f1)
+        ;
+
+        
+    
+    
+            marker_c470d1256349a427bb8895958a7e659f.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB2<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/003_DB2.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c470d1256349a427bb8895958a7e659f.setIcon(icon_1564a5ddb03c2fe8c741441ce09efb0e);
+            
+    
+            var marker_a40ec7c166ba3e2d7dbe64be51118c34 = L.marker(
+                [13.715826666666665, 79.59188999999999],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_8c5146466008c3c44e11034855b4b823 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f35a0b9400e01245b8ccf29f226fda0 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_8049eb42163df586e21e2e2917d4767c = $(`<div id="html_8049eb42163df586e21e2e2917d4767c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB3</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 20%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715827, 79.591890</p>       <a href="../../assets/q1_photos/004_DB3.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/004_DB3.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_7f35a0b9400e01245b8ccf29f226fda0.setContent(html_8049eb42163df586e21e2e2917d4767c);
+            
+        
+
+        marker_a40ec7c166ba3e2d7dbe64be51118c34.bindPopup(popup_7f35a0b9400e01245b8ccf29f226fda0)
+        ;
+
+        
+    
+    
+            marker_a40ec7c166ba3e2d7dbe64be51118c34.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB3<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/004_DB3.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a40ec7c166ba3e2d7dbe64be51118c34.setIcon(icon_8c5146466008c3c44e11034855b4b823);
+            
+    
+            var marker_521550d13930ef0ee6cf5a43d96ddd07 = L.marker(
+                [13.715554999999997, 79.59177833333335],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_d06c94ff242fb39db6845d024c921293 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ab10533fb4223909a5d6c432ad89f7f = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_b18e435969a3ba198b160c878f0c4da9 = $(`<div id="html_b18e435969a3ba198b160c878f0c4da9" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB4</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 30%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715555, 79.591778</p>       <a href="../../assets/q1_photos/005_DB4.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/005_DB4.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_4ab10533fb4223909a5d6c432ad89f7f.setContent(html_b18e435969a3ba198b160c878f0c4da9);
+            
+        
+
+        marker_521550d13930ef0ee6cf5a43d96ddd07.bindPopup(popup_4ab10533fb4223909a5d6c432ad89f7f)
+        ;
+
+        
+    
+    
+            marker_521550d13930ef0ee6cf5a43d96ddd07.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB4<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/005_DB4.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_521550d13930ef0ee6cf5a43d96ddd07.setIcon(icon_d06c94ff242fb39db6845d024c921293);
+            
+    
+            var marker_77ab3c503181ec6a5fb5273fcee15a44 = L.marker(
+                [13.715554999999997, 79.59177833333335],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_9abdabbfaf6727ca758c75088139ab97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6422ced2cda99748599d01197e5f9e94 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_faedd2e7e41ee8023b41637a19871261 = $(`<div id="html_faedd2e7e41ee8023b41637a19871261" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB5</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 50%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715555, 79.591778</p>       <a href="../../assets/q1_photos/006_DB5.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/006_DB5.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_6422ced2cda99748599d01197e5f9e94.setContent(html_faedd2e7e41ee8023b41637a19871261);
+            
+        
+
+        marker_77ab3c503181ec6a5fb5273fcee15a44.bindPopup(popup_6422ced2cda99748599d01197e5f9e94)
+        ;
+
+        
+    
+    
+            marker_77ab3c503181ec6a5fb5273fcee15a44.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB5<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/006_DB5.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77ab3c503181ec6a5fb5273fcee15a44.setIcon(icon_9abdabbfaf6727ca758c75088139ab97);
+            
+    
+            var marker_bf762a8aa02117d87d124de258a1eb83 = L.marker(
+                [13.715217620451613, 79.59189912711777],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_0619153eb39c09fe99ed30ad7b903d90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6bf4a1db60859fdc36c8c8e72b102978 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_701f6fc08ad968d49ff2ee3e3f6416d5 = $(`<div id="html_701f6fc08ad968d49ff2ee3e3f6416d5" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 7</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715218, 79.591899</p>       <a href="../../assets/q1_photos/009_DB7.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/009_DB7.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (DB7). Not the original photo for this point.</p></div></div>`)[0];
+                popup_6bf4a1db60859fdc36c8c8e72b102978.setContent(html_701f6fc08ad968d49ff2ee3e3f6416d5);
+            
+        
+
+        marker_bf762a8aa02117d87d124de258a1eb83.bindPopup(popup_6bf4a1db60859fdc36c8c8e72b102978)
+        ;
+
+        
+    
+    
+            marker_bf762a8aa02117d87d124de258a1eb83.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 7<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/009_DB7.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf762a8aa02117d87d124de258a1eb83.setIcon(icon_0619153eb39c09fe99ed30ad7b903d90);
+            
+    
+            var marker_99079937924c85b69a3bcb2bfc9df78b = L.marker(
+                [13.7155382, 79.591505],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_975259b62cc5a1483255198bc4b8ea1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb0a78f3033097680cc72da10cd7e644 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_1ce09c9d3da83aeb6ddfea816c674182 = $(`<div id="html_1ce09c9d3da83aeb6ddfea816c674182" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB6</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715538, 79.591505</p>       <a href="../../assets/q1_photos/008_DB6.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/008_DB6.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_cb0a78f3033097680cc72da10cd7e644.setContent(html_1ce09c9d3da83aeb6ddfea816c674182);
+            
+        
+
+        marker_99079937924c85b69a3bcb2bfc9df78b.bindPopup(popup_cb0a78f3033097680cc72da10cd7e644)
+        ;
+
+        
+    
+    
+            marker_99079937924c85b69a3bcb2bfc9df78b.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB6<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/008_DB6.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_99079937924c85b69a3bcb2bfc9df78b.setIcon(icon_975259b62cc5a1483255198bc4b8ea1e);
+            
+    
+            var marker_97a5882edc6fbab8f713a74be27b7c05 = L.marker(
+                [13.715280299999996, 79.591538],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_fe001ff78211a5ee8e71169ca2306028 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5e4bb38cece665d0d95f1b1f71987f7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e3bcee09e22cfa0130b4aed40f07b26c = $(`<div id="html_e3bcee09e22cfa0130b4aed40f07b26c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB7</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715280, 79.591538</p>       <a href="../../assets/q1_photos/009_DB7.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/009_DB7.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_e5e4bb38cece665d0d95f1b1f71987f7.setContent(html_e3bcee09e22cfa0130b4aed40f07b26c);
+            
+        
+
+        marker_97a5882edc6fbab8f713a74be27b7c05.bindPopup(popup_e5e4bb38cece665d0d95f1b1f71987f7)
+        ;
+
+        
+    
+    
+            marker_97a5882edc6fbab8f713a74be27b7c05.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB7<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/009_DB7.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97a5882edc6fbab8f713a74be27b7c05.setIcon(icon_fe001ff78211a5ee8e71169ca2306028);
+            
+    
+            var marker_fce601e745b8e940982b7434fd2b88ce = L.marker(
+                [13.714976399999998, 79.59122089999997],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_14183cd0a892916aad3908452b777af4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27971023a360342efe05738d8943b878 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_45328a5d4fe86768f35f5e4f54da2599 = $(`<div id="html_45328a5d4fe86768f35f5e4f54da2599" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB8</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714976, 79.591221</p>       <a href="../../assets/q1_photos/010_DB8.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/010_DB8.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_27971023a360342efe05738d8943b878.setContent(html_45328a5d4fe86768f35f5e4f54da2599);
+            
+        
+
+        marker_fce601e745b8e940982b7434fd2b88ce.bindPopup(popup_27971023a360342efe05738d8943b878)
+        ;
+
+        
+    
+    
+            marker_fce601e745b8e940982b7434fd2b88ce.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB8<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/010_DB8.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fce601e745b8e940982b7434fd2b88ce.setIcon(icon_14183cd0a892916aad3908452b777af4);
+            
+    
+            var marker_e1afe2dd83c3fbf56c6d6566866ab9cc = L.marker(
+                [13.715243333333332, 79.59126333333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_3fbe4d3f826a5e906d9a7a97449f3413 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1de38530c6bb650d74ccc72b129dbb82 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_053b3a147efca8cc8921c8700180b5fa = $(`<div id="html_053b3a147efca8cc8921c8700180b5fa" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB9</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 80%filled</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715243, 79.591263</p>       <a href="../../assets/q1_photos/011_DB9.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/011_DB9.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_1de38530c6bb650d74ccc72b129dbb82.setContent(html_053b3a147efca8cc8921c8700180b5fa);
+            
+        
+
+        marker_e1afe2dd83c3fbf56c6d6566866ab9cc.bindPopup(popup_1de38530c6bb650d74ccc72b129dbb82)
+        ;
+
+        
+    
+    
+            marker_e1afe2dd83c3fbf56c6d6566866ab9cc.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB9<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/011_DB9.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1afe2dd83c3fbf56c6d6566866ab9cc.setIcon(icon_3fbe4d3f826a5e906d9a7a97449f3413);
+            
+    
+            var marker_93ddbcc0b8b353cfb77a93c5b2fdf86b = L.marker(
+                [13.71778, 79.5874533333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_e1782044fe79560f9df9644571a32044 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a022549b2c416cf6f80305065f984be = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_19cb14eea43b7241c514b37174f81e60 = $(`<div id="html_19cb14eea43b7241c514b37174f81e60" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB10</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 100</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717780, 79.587453</p>       <a href="../../assets/q1_photos/012_DB10.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/012_DB10.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_4a022549b2c416cf6f80305065f984be.setContent(html_19cb14eea43b7241c514b37174f81e60);
+            
+        
+
+        marker_93ddbcc0b8b353cfb77a93c5b2fdf86b.bindPopup(popup_4a022549b2c416cf6f80305065f984be)
+        ;
+
+        
+    
+    
+            marker_93ddbcc0b8b353cfb77a93c5b2fdf86b.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB10<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/012_DB10.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93ddbcc0b8b353cfb77a93c5b2fdf86b.setIcon(icon_e1782044fe79560f9df9644571a32044);
+            
+    
+            var marker_f74f0861c54365fc0c6d27724f6eb168 = L.marker(
+                [13.717796666666688, 79.58700202330834],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_fb07726b8f23758e3df4cdcd2992b2db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6fd419654fbe24757e0591e10c2efd8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d4bd5cbe6588cd257921fa7a160fa651 = $(`<div id="html_d4bd5cbe6588cd257921fa7a160fa651" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 13</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717797, 79.587002</p>       <a href="../../assets/q1_photos/044_D37.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/044_D37.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (D37). Not the original photo for this point.</p></div></div>`)[0];
+                popup_c6fd419654fbe24757e0591e10c2efd8.setContent(html_d4bd5cbe6588cd257921fa7a160fa651);
+            
+        
+
+        marker_f74f0861c54365fc0c6d27724f6eb168.bindPopup(popup_c6fd419654fbe24757e0591e10c2efd8)
+        ;
+
+        
+    
+    
+            marker_f74f0861c54365fc0c6d27724f6eb168.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 13<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/044_D37.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f74f0861c54365fc0c6d27724f6eb168.setIcon(icon_fb07726b8f23758e3df4cdcd2992b2db);
+            
+    
+            var marker_8577e0a55c39ec2ac513ba6c6f64f601 = L.marker(
+                [13.71657833333333, 79.588485],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_beee3d87c74ab03c268c02d3d40c0da2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bbfca8a238c3dddcb0a509e79b595d8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_8b67b431f10fc16ae94ab671e269e06c = $(`<div id="html_8b67b431f10fc16ae94ab671e269e06c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB11</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 20</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.716578, 79.588485</p>       <a href="../../assets/q1_photos/014_DB11.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/014_DB11.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_2bbfca8a238c3dddcb0a509e79b595d8.setContent(html_8b67b431f10fc16ae94ab671e269e06c);
+            
+        
+
+        marker_8577e0a55c39ec2ac513ba6c6f64f601.bindPopup(popup_2bbfca8a238c3dddcb0a509e79b595d8)
+        ;
+
+        
+    
+    
+            marker_8577e0a55c39ec2ac513ba6c6f64f601.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB11<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/014_DB11.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8577e0a55c39ec2ac513ba6c6f64f601.setIcon(icon_beee3d87c74ab03c268c02d3d40c0da2);
+            
+    
+            var marker_0720f703f7b7f4f8f19182af6be0e977 = L.marker(
+                [13.715632339319392, 79.5885815674436],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_533b511e540c85711405b324fbe7ac07 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_afbeba9995408100c4b1ffe27f2ccd59 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2909257f5bda287afa2e24ee4b7ec300 = $(`<div id="html_2909257f5bda287afa2e24ee4b7ec300" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB12</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715632, 79.588582</p>       <a href="../../assets/q1_photos/015_DB12.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/015_DB12.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_afbeba9995408100c4b1ffe27f2ccd59.setContent(html_2909257f5bda287afa2e24ee4b7ec300);
+            
+        
+
+        marker_0720f703f7b7f4f8f19182af6be0e977.bindPopup(popup_afbeba9995408100c4b1ffe27f2ccd59)
+        ;
+
+        
+    
+    
+            marker_0720f703f7b7f4f8f19182af6be0e977.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB12<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/015_DB12.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0720f703f7b7f4f8f19182af6be0e977.setIcon(icon_533b511e540c85711405b324fbe7ac07);
+            
+    
+            var marker_ffec7cd057c68cbcc5ca7da6c8f11295 = L.marker(
+                [13.715632339319392, 79.5885815674436],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_4d5f04210f6b182a57c70abf874d5db8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f960334af1b6f51778d0853f5d0fad67 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_fd45e3bbee357cf5d5fb28f6840169aa = $(`<div id="html_fd45e3bbee357cf5d5fb28f6840169aa" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB13</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715632, 79.588582</p>       <a href="../../assets/q1_photos/016_DB13.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/016_DB13.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_f960334af1b6f51778d0853f5d0fad67.setContent(html_fd45e3bbee357cf5d5fb28f6840169aa);
+            
+        
+
+        marker_ffec7cd057c68cbcc5ca7da6c8f11295.bindPopup(popup_f960334af1b6f51778d0853f5d0fad67)
+        ;
+
+        
+    
+    
+            marker_ffec7cd057c68cbcc5ca7da6c8f11295.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB13<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/016_DB13.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffec7cd057c68cbcc5ca7da6c8f11295.setIcon(icon_4d5f04210f6b182a57c70abf874d5db8);
+            
+    
+            var marker_a04a86ae6eae279efc23bbe0f1c9d486 = L.marker(
+                [13.714913573847529, 79.58924593325798],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_d89104bfd03e84577d4708ff5e96cd63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bac37ff9cfd14c0afe05664ba5ea3d76 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d047f71881893943027d92e63b4dd876 = $(`<div id="html_d047f71881893943027d92e63b4dd876" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 17</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714914, 79.589246</p>       <a href="../../assets/q1_photos/018_DB14.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/018_DB14.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (DB14). Not the original photo for this point.</p></div></div>`)[0];
+                popup_bac37ff9cfd14c0afe05664ba5ea3d76.setContent(html_d047f71881893943027d92e63b4dd876);
+            
+        
+
+        marker_a04a86ae6eae279efc23bbe0f1c9d486.bindPopup(popup_bac37ff9cfd14c0afe05664ba5ea3d76)
+        ;
+
+        
+    
+    
+            marker_a04a86ae6eae279efc23bbe0f1c9d486.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 17<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/018_DB14.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a04a86ae6eae279efc23bbe0f1c9d486.setIcon(icon_d89104bfd03e84577d4708ff5e96cd63);
+            
+    
+            var marker_26d69dd466c9ffb10c37a01d32f6c058 = L.marker(
+                [13.714543333333326, 79.58960833333335],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_f6ae701d970d57e35c2b472e74dac6df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39edeb98c9198fd572aeb2eb6fae1df3 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ccde4dcded84bf0beee77b6612b427f1 = $(`<div id="html_ccde4dcded84bf0beee77b6612b427f1" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB14</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714543, 79.589608</p>       <a href="../../assets/q1_photos/018_DB14.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/018_DB14.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_39edeb98c9198fd572aeb2eb6fae1df3.setContent(html_ccde4dcded84bf0beee77b6612b427f1);
+            
+        
+
+        marker_26d69dd466c9ffb10c37a01d32f6c058.bindPopup(popup_39edeb98c9198fd572aeb2eb6fae1df3)
+        ;
+
+        
+    
+    
+            marker_26d69dd466c9ffb10c37a01d32f6c058.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB14<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/018_DB14.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26d69dd466c9ffb10c37a01d32f6c058.setIcon(icon_f6ae701d970d57e35c2b472e74dac6df);
+            
+    
+            var marker_b79b616a23586eb0a690bb2fa97f4948 = L.marker(
+                [13.714266666666662, 79.59012999999997],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_70b5811cfefae675252bd931c3233c6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39dfeab07106cb7326233364cdd622aa = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2d03b346599ecbf78a365bed6675acce = $(`<div id="html_2d03b346599ecbf78a365bed6675acce" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D15</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.714267, 79.590130</p>       <a href="../../assets/q1_photos/019_D15.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/019_D15.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_39dfeab07106cb7326233364cdd622aa.setContent(html_2d03b346599ecbf78a365bed6675acce);
+            
+        
+
+        marker_b79b616a23586eb0a690bb2fa97f4948.bindPopup(popup_39dfeab07106cb7326233364cdd622aa)
+        ;
+
+        
+    
+    
+            marker_b79b616a23586eb0a690bb2fa97f4948.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D15<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/019_D15.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b79b616a23586eb0a690bb2fa97f4948.setIcon(icon_70b5811cfefae675252bd931c3233c6f);
+            
+    
+            var marker_7773211fcd6daeffe4b4fb721ba403b9 = L.marker(
+                [13.712831666666665, 79.59143999999996],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_ca4b00251664ee6301c4b5c6b50525fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c853851be77b9315689c1ab910a81bd = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_57d39f9c4cd24de64fa1494b2855456a = $(`<div id="html_57d39f9c4cd24de64fa1494b2855456a" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D16</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.712832, 79.591440</p>       <a href="../../assets/q1_photos/020_D16.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/020_D16.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_9c853851be77b9315689c1ab910a81bd.setContent(html_57d39f9c4cd24de64fa1494b2855456a);
+            
+        
+
+        marker_7773211fcd6daeffe4b4fb721ba403b9.bindPopup(popup_9c853851be77b9315689c1ab910a81bd)
+        ;
+
+        
+    
+    
+            marker_7773211fcd6daeffe4b4fb721ba403b9.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D16<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/020_D16.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7773211fcd6daeffe4b4fb721ba403b9.setIcon(icon_ca4b00251664ee6301c4b5c6b50525fc);
+            
+    
+            var marker_4baad40cf1ebb3203aa3852f4f55f191 = L.marker(
+                [13.71252333333333, 79.59192],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_d8f31e90aa06f40eabd56f9a5ab4066d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5ba66d567657c9cd940936ab39cd70a = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_a315d580ef7f4990089225f0dc976de6 = $(`<div id="html_a315d580ef7f4990089225f0dc976de6" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D17</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 80%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.712523, 79.591920</p>       <a href="../../assets/q1_photos/021_D17.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/021_D17.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_d5ba66d567657c9cd940936ab39cd70a.setContent(html_a315d580ef7f4990089225f0dc976de6);
+            
+        
+
+        marker_4baad40cf1ebb3203aa3852f4f55f191.bindPopup(popup_d5ba66d567657c9cd940936ab39cd70a)
+        ;
+
+        
+    
+    
+            marker_4baad40cf1ebb3203aa3852f4f55f191.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D17<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/021_D17.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4baad40cf1ebb3203aa3852f4f55f191.setIcon(icon_d8f31e90aa06f40eabd56f9a5ab4066d);
+            
+    
+            var marker_b99641dd7d36c86c821e6e14d9b15df1 = L.marker(
+                [13.711161666666664, 79.59253333333332],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_9e08474da817f6043eeda213c68e0496 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a8d7ae2e7e5eb0d3ea9d2c99ef1d8dc4 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_210dac213ebf7461989e61005ac5f086 = $(`<div id="html_210dac213ebf7461989e61005ac5f086" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D18</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 30%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.711162, 79.592533</p>       <a href="../../assets/q1_photos/022_D18.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/022_D18.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_a8d7ae2e7e5eb0d3ea9d2c99ef1d8dc4.setContent(html_210dac213ebf7461989e61005ac5f086);
+            
+        
+
+        marker_b99641dd7d36c86c821e6e14d9b15df1.bindPopup(popup_a8d7ae2e7e5eb0d3ea9d2c99ef1d8dc4)
+        ;
+
+        
+    
+    
+            marker_b99641dd7d36c86c821e6e14d9b15df1.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D18<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/022_D18.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b99641dd7d36c86c821e6e14d9b15df1.setIcon(icon_9e08474da817f6043eeda213c68e0496);
+            
+    
+            var marker_619b06116f9169ffbb289f2a17396910 = L.marker(
+                [13.709994999999996, 79.59254166666666],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_ec1fe82e507a7515c3858a9d951a023e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b7e891b5e8f93a0cb66af662fecac31 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2a9d0193d0d319012e8ad72714cbc2e5 = $(`<div id="html_2a9d0193d0d319012e8ad72714cbc2e5" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D19</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 50%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.709995, 79.592542</p>       <a href="../../assets/q1_photos/023_D19.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/023_D19.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_2b7e891b5e8f93a0cb66af662fecac31.setContent(html_2a9d0193d0d319012e8ad72714cbc2e5);
+            
+        
+
+        marker_619b06116f9169ffbb289f2a17396910.bindPopup(popup_2b7e891b5e8f93a0cb66af662fecac31)
+        ;
+
+        
+    
+    
+            marker_619b06116f9169ffbb289f2a17396910.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D19<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/023_D19.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_619b06116f9169ffbb289f2a17396910.setIcon(icon_ec1fe82e507a7515c3858a9d951a023e);
+            
+    
+            var marker_992a1f60e006e65d9b52c0953ba2dba9 = L.marker(
+                [13.708334999999998, 79.59264],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_6835e7498e9f95be87c230fdca0fc920 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c534863af1c781aec041a7351176d5b = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_f7a9bb94c543a4a195f7f40765437f3a = $(`<div id="html_f7a9bb94c543a4a195f7f40765437f3a" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D20</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 0</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.708335, 79.592640</p>       <a href="../../assets/q1_photos/024_D20.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/024_D20.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_0c534863af1c781aec041a7351176d5b.setContent(html_f7a9bb94c543a4a195f7f40765437f3a);
+            
+        
+
+        marker_992a1f60e006e65d9b52c0953ba2dba9.bindPopup(popup_0c534863af1c781aec041a7351176d5b)
+        ;
+
+        
+    
+    
+            marker_992a1f60e006e65d9b52c0953ba2dba9.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D20<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/024_D20.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_992a1f60e006e65d9b52c0953ba2dba9.setIcon(icon_6835e7498e9f95be87c230fdca0fc920);
+            
+    
+            var marker_bd7558be285fd4f2c63ce687fdbd39c0 = L.marker(
+                [13.70731666666666, 79.59276166666668],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_878ff74d531d5fd4462e9374694579ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_69347d3f4c4e75d0d1542fb4a4bc6e89 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_7c0dd1b549fdb85bee019016c98ccb81 = $(`<div id="html_7c0dd1b549fdb85bee019016c98ccb81" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D21</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 40%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707317, 79.592762</p>       <a href="../../assets/q1_photos/025_D21.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/025_D21.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_69347d3f4c4e75d0d1542fb4a4bc6e89.setContent(html_7c0dd1b549fdb85bee019016c98ccb81);
+            
+        
+
+        marker_bd7558be285fd4f2c63ce687fdbd39c0.bindPopup(popup_69347d3f4c4e75d0d1542fb4a4bc6e89)
+        ;
+
+        
+    
+    
+            marker_bd7558be285fd4f2c63ce687fdbd39c0.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D21<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/025_D21.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd7558be285fd4f2c63ce687fdbd39c0.setIcon(icon_878ff74d531d5fd4462e9374694579ed);
+            
+    
+            var marker_80880e9b18b1f126694e6fe06a6d1762 = L.marker(
+                [13.707214999999998, 79.59280666666665],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_2814ca3d249a233128c1e4f1717f1090 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3841896c9b7437ce446e6fc56f8e04e4 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_83cc39feeccd20391e083e3654fc916f = $(`<div id="html_83cc39feeccd20391e083e3654fc916f" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 26</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707215, 79.592807</p>       <a href="../../assets/q1_photos/027_D22.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/027_D22.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (D22). Not the original photo for this point.</p></div></div>`)[0];
+                popup_3841896c9b7437ce446e6fc56f8e04e4.setContent(html_83cc39feeccd20391e083e3654fc916f);
+            
+        
+
+        marker_80880e9b18b1f126694e6fe06a6d1762.bindPopup(popup_3841896c9b7437ce446e6fc56f8e04e4)
+        ;
+
+        
+    
+    
+            marker_80880e9b18b1f126694e6fe06a6d1762.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 26<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/027_D22.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_80880e9b18b1f126694e6fe06a6d1762.setIcon(icon_2814ca3d249a233128c1e4f1717f1090);
+            
+    
+            var marker_0098f58b7e07431f8477228061aad31f = L.marker(
+                [13.707214999999998, 79.59280666666665],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_3381f557f8bad995acb216325589e29b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_135d5db7dd737cbe84093ab2368d81ef = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e829b2253c5d2ae7f625f1ddb7393a9e = $(`<div id="html_e829b2253c5d2ae7f625f1ddb7393a9e" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D22</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 0</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707215, 79.592807</p>       <a href="../../assets/q1_photos/027_D22.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/027_D22.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_135d5db7dd737cbe84093ab2368d81ef.setContent(html_e829b2253c5d2ae7f625f1ddb7393a9e);
+            
+        
+
+        marker_0098f58b7e07431f8477228061aad31f.bindPopup(popup_135d5db7dd737cbe84093ab2368d81ef)
+        ;
+
+        
+    
+    
+            marker_0098f58b7e07431f8477228061aad31f.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D22<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/027_D22.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0098f58b7e07431f8477228061aad31f.setIcon(icon_3381f557f8bad995acb216325589e29b);
+            
+    
+            var marker_babcf1199d0c0b0a8643386b11aa1cdf = L.marker(
+                [13.708873333333331, 79.59384166666668],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_499d10af9fc32dc37c5a4aacedcab265 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eac902bd7012172d3f8e9fa04f6d6d9e = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_093c1ab254b1a0fd8b0f6ef507cd6565 = $(`<div id="html_093c1ab254b1a0fd8b0f6ef507cd6565" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">Waste bin 28</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> No field note supplied.</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.708873, 79.593842</p>       <a href="../../assets/q1_photos/029_d23.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/029_d23.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (d23). Not the original photo for this point.</p></div></div>`)[0];
+                popup_eac902bd7012172d3f8e9fa04f6d6d9e.setContent(html_093c1ab254b1a0fd8b0f6ef507cd6565);
+            
+        
+
+        marker_babcf1199d0c0b0a8643386b11aa1cdf.bindPopup(popup_eac902bd7012172d3f8e9fa04f6d6d9e)
+        ;
+
+        
+    
+    
+            marker_babcf1199d0c0b0a8643386b11aa1cdf.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">Waste bin 28<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/029_d23.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_babcf1199d0c0b0a8643386b11aa1cdf.setIcon(icon_499d10af9fc32dc37c5a4aacedcab265);
+            
+    
+            var marker_85244bd1192c8e454a8473fd297294a6 = L.marker(
+                [13.708886666666668, 79.59383999999997],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_d363a12727e752bd2defb86b2ae4dae9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c0da37ee6420f162ff287c3b8cca426 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_16934be1bfe622bce6eb7fd0316d0f23 = $(`<div id="html_16934be1bfe622bce6eb7fd0316d0f23" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">d23</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.708887, 79.593840</p>       <a href="../../assets/q1_photos/029_d23.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/029_d23.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_6c0da37ee6420f162ff287c3b8cca426.setContent(html_16934be1bfe622bce6eb7fd0316d0f23);
+            
+        
+
+        marker_85244bd1192c8e454a8473fd297294a6.bindPopup(popup_6c0da37ee6420f162ff287c3b8cca426)
+        ;
+
+        
+    
+    
+            marker_85244bd1192c8e454a8473fd297294a6.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">d23<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/029_d23.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_85244bd1192c8e454a8473fd297294a6.setIcon(icon_d363a12727e752bd2defb86b2ae4dae9);
+            
+    
+            var marker_eccb71b31b7affc39d028a1867183085 = L.marker(
+                [13.709334999999998, 79.593225],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_2fe5196e9f0da9df82379989f052fc96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_337b786ea970453f429ab265033bec55 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_4a94738ccc90750a17040407b02c7d80 = $(`<div id="html_4a94738ccc90750a17040407b02c7d80" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D24</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 5%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.709335, 79.593225</p>       <a href="../../assets/q1_photos/031_D25.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/031_D25.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#b45309;font-size:12px;margin:4px 0"><b>Representative image:</b> nearest photographed observation (D25). Not the original photo for this point.</p></div></div>`)[0];
+                popup_337b786ea970453f429ab265033bec55.setContent(html_4a94738ccc90750a17040407b02c7d80);
+            
+        
+
+        marker_eccb71b31b7affc39d028a1867183085.bindPopup(popup_337b786ea970453f429ab265033bec55)
+        ;
+
+        
+    
+    
+            marker_eccb71b31b7affc39d028a1867183085.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D24<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/031_D25.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eccb71b31b7affc39d028a1867183085.setIcon(icon_2fe5196e9f0da9df82379989f052fc96);
+            
+    
+            var marker_3cd87e00cc8f120c5a51b97630fd0f49 = L.marker(
+                [13.709826666666665, 79.5931533333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_640f359be90acf8ba946b9487880370e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d800b8871977fa08718cb48f9e28411d = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_80b3f278300357ed6733e312de431c01 = $(`<div id="html_80b3f278300357ed6733e312de431c01" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D25</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 5%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.709827, 79.593153</p>       <a href="../../assets/q1_photos/031_D25.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/031_D25.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_d800b8871977fa08718cb48f9e28411d.setContent(html_80b3f278300357ed6733e312de431c01);
+            
+        
+
+        marker_3cd87e00cc8f120c5a51b97630fd0f49.bindPopup(popup_d800b8871977fa08718cb48f9e28411d)
+        ;
+
+        
+    
+    
+            marker_3cd87e00cc8f120c5a51b97630fd0f49.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D25<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/031_D25.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3cd87e00cc8f120c5a51b97630fd0f49.setIcon(icon_640f359be90acf8ba946b9487880370e);
+            
+    
+            var marker_1f4b9ccefbbddef92f57a094eecc0ee0 = L.marker(
+                [13.707769999999998, 79.59445666666664],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_17d979784edd19cebe87f5c544e1f8b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c53647078d646fb00d07c1b172e22554 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_eb75ad2a5c1ebfcde1cc789a627b1e2c = $(`<div id="html_eb75ad2a5c1ebfcde1cc789a627b1e2c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D26</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707770, 79.594457</p>       <a href="../../assets/q1_photos/032_D26.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/032_D26.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_c53647078d646fb00d07c1b172e22554.setContent(html_eb75ad2a5c1ebfcde1cc789a627b1e2c);
+            
+        
+
+        marker_1f4b9ccefbbddef92f57a094eecc0ee0.bindPopup(popup_c53647078d646fb00d07c1b172e22554)
+        ;
+
+        
+    
+    
+            marker_1f4b9ccefbbddef92f57a094eecc0ee0.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D26<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/032_D26.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f4b9ccefbbddef92f57a094eecc0ee0.setIcon(icon_17d979784edd19cebe87f5c544e1f8b8);
+            
+    
+            var marker_5be936cfc3227a728584c4f84689d4bf = L.marker(
+                [13.706865000000004, 79.59446833333332],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_1a6c9bef3665d27b3baa99a819015776 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e7563c2c6f05829bb2ef935f6b89a99 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_df926bf33f5822d26c3f1c1399c30e14 = $(`<div id="html_df926bf33f5822d26c3f1c1399c30e14" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB27</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 30%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.706865, 79.594468</p>       <a href="../../assets/q1_photos/033_DB27.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/033_DB27.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_9e7563c2c6f05829bb2ef935f6b89a99.setContent(html_df926bf33f5822d26c3f1c1399c30e14);
+            
+        
+
+        marker_5be936cfc3227a728584c4f84689d4bf.bindPopup(popup_9e7563c2c6f05829bb2ef935f6b89a99)
+        ;
+
+        
+    
+    
+            marker_5be936cfc3227a728584c4f84689d4bf.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB27<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/033_DB27.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5be936cfc3227a728584c4f84689d4bf.setIcon(icon_1a6c9bef3665d27b3baa99a819015776);
+            
+    
+            var marker_e4fd40c6691e0c6c48237de7d396f64b = L.marker(
+                [13.706943333333331, 79.594685],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_0948ee972a35f3b6977d755c4fd8f513 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7af8567aed00603d2397e7f198aa208 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e9776be3f1206eb20ea311c7bd0a4e29 = $(`<div id="html_e9776be3f1206eb20ea311c7bd0a4e29" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D28</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.706943, 79.594685</p>       <a href="../../assets/q1_photos/034_D28.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/034_D28.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_c7af8567aed00603d2397e7f198aa208.setContent(html_e9776be3f1206eb20ea311c7bd0a4e29);
+            
+        
+
+        marker_e4fd40c6691e0c6c48237de7d396f64b.bindPopup(popup_c7af8567aed00603d2397e7f198aa208)
+        ;
+
+        
+    
+    
+            marker_e4fd40c6691e0c6c48237de7d396f64b.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D28<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/034_D28.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e4fd40c6691e0c6c48237de7d396f64b.setIcon(icon_0948ee972a35f3b6977d755c4fd8f513);
+            
+    
+            var marker_473cb298b923c85c2f655be3c24ea72b = L.marker(
+                [13.707698100000002, 79.59490109999999],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_fe69d161191ff48826acfb33f9b35c05 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e083c1adee1080fc7371bff4c7eec72 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_7a60fe49a29107005df35150ad8c6515 = $(`<div id="html_7a60fe49a29107005df35150ad8c6515" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB29</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 80%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707698, 79.594901</p>       <a href="../../assets/q1_photos/035_DB29.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/035_DB29.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_6e083c1adee1080fc7371bff4c7eec72.setContent(html_7a60fe49a29107005df35150ad8c6515);
+            
+        
+
+        marker_473cb298b923c85c2f655be3c24ea72b.bindPopup(popup_6e083c1adee1080fc7371bff4c7eec72)
+        ;
+
+        
+    
+    
+            marker_473cb298b923c85c2f655be3c24ea72b.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB29<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/035_DB29.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_473cb298b923c85c2f655be3c24ea72b.setIcon(icon_fe69d161191ff48826acfb33f9b35c05);
+            
+    
+            var marker_17c0664ef3eb8b19d63f2d246313fef5 = L.marker(
+                [13.707219999999992, 79.59435],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_c4cb2c7e6b206ac56ac62df61dc11422 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_942b3bb81e444f5f85c563a86d89bebd = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_262af96d2fdda4ba45b44fe68e6c7928 = $(`<div id="html_262af96d2fdda4ba45b44fe68e6c7928" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB30</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 20%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.707220, 79.594350</p>       <a href="../../assets/q1_photos/036_DB30.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/036_DB30.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_942b3bb81e444f5f85c563a86d89bebd.setContent(html_262af96d2fdda4ba45b44fe68e6c7928);
+            
+        
+
+        marker_17c0664ef3eb8b19d63f2d246313fef5.bindPopup(popup_942b3bb81e444f5f85c563a86d89bebd)
+        ;
+
+        
+    
+    
+            marker_17c0664ef3eb8b19d63f2d246313fef5.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB30<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/036_DB30.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_17c0664ef3eb8b19d63f2d246313fef5.setIcon(icon_c4cb2c7e6b206ac56ac62df61dc11422);
+            
+    
+            var marker_55f026d223292619b1cdaa7f18690eff = L.marker(
+                [13.706031666666668, 79.5944233333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_6be7cca352e9c24d60193836552de669 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_362bb93a88a7348c030648f5ed9979c0 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3d3c4dc2f7dc38d76b7c7a748ebc48cb = $(`<div id="html_3d3c4dc2f7dc38d76b7c7a748ebc48cb" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">DB31</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.706032, 79.594423</p>       <a href="../../assets/q1_photos/037_DB31.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/037_DB31.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_362bb93a88a7348c030648f5ed9979c0.setContent(html_3d3c4dc2f7dc38d76b7c7a748ebc48cb);
+            
+        
+
+        marker_55f026d223292619b1cdaa7f18690eff.bindPopup(popup_362bb93a88a7348c030648f5ed9979c0)
+        ;
+
+        
+    
+    
+            marker_55f026d223292619b1cdaa7f18690eff.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">DB31<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/037_DB31.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_55f026d223292619b1cdaa7f18690eff.setIcon(icon_6be7cca352e9c24d60193836552de669);
+            
+    
+            var marker_e5bc726f4a42adc7c9276ee1f1ef540a = L.marker(
+                [13.716963333333336, 79.59171166666667],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_4b99589ab5a9b8da7c09aa1926d6f85e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48d5b9cfe64d889622de70ff20e515d4 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_95d253eff010183c390c569514908e48 = $(`<div id="html_95d253eff010183c390c569514908e48" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D32</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.716963, 79.591712</p>       <a href="../../assets/q1_photos/038_D32.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/038_D32.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_48d5b9cfe64d889622de70ff20e515d4.setContent(html_95d253eff010183c390c569514908e48);
+            
+        
+
+        marker_e5bc726f4a42adc7c9276ee1f1ef540a.bindPopup(popup_48d5b9cfe64d889622de70ff20e515d4)
+        ;
+
+        
+    
+    
+            marker_e5bc726f4a42adc7c9276ee1f1ef540a.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D32<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/038_D32.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e5bc726f4a42adc7c9276ee1f1ef540a.setIcon(icon_4b99589ab5a9b8da7c09aa1926d6f85e);
+            
+    
+            var marker_60b23674ddac10291124a9e3c4016e18 = L.marker(
+                [13.715118333333326, 79.59120833333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_ba9090379ec2da2fc6a7137c31d38d8a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_97afda649977169e4b7efab3e1371b9d = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_5a23b3f31d72946a939d4694fecabc4b = $(`<div id="html_5a23b3f31d72946a939d4694fecabc4b" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D33</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 15%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.715118, 79.591208</p>       <a href="../../assets/q1_photos/039_D33.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/039_D33.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_97afda649977169e4b7efab3e1371b9d.setContent(html_5a23b3f31d72946a939d4694fecabc4b);
+            
+        
+
+        marker_60b23674ddac10291124a9e3c4016e18.bindPopup(popup_97afda649977169e4b7efab3e1371b9d)
+        ;
+
+        
+    
+    
+            marker_60b23674ddac10291124a9e3c4016e18.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D33<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/039_D33.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_60b23674ddac10291124a9e3c4016e18.setIcon(icon_ba9090379ec2da2fc6a7137c31d38d8a);
+            
+    
+            var marker_5e2a8e4dffefa9238627e8be2f255e01 = L.marker(
+                [13.717448333333335, 79.58766166666665],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_fa78c95b22bb61ff0df9581db44a3f67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d36098cadeb4db8357b43cacd6e65aff = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_506651b7c357207af75be3b583417f2c = $(`<div id="html_506651b7c357207af75be3b583417f2c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D33</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 100%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717448, 79.587662</p>       <a href="../../assets/q1_photos/040_D33.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/040_D33.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_d36098cadeb4db8357b43cacd6e65aff.setContent(html_506651b7c357207af75be3b583417f2c);
+            
+        
+
+        marker_5e2a8e4dffefa9238627e8be2f255e01.bindPopup(popup_d36098cadeb4db8357b43cacd6e65aff)
+        ;
+
+        
+    
+    
+            marker_5e2a8e4dffefa9238627e8be2f255e01.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D33<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/040_D33.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e2a8e4dffefa9238627e8be2f255e01.setIcon(icon_fa78c95b22bb61ff0df9581db44a3f67);
+            
+    
+            var marker_c9da44400283e81a823b0db07dba0858 = L.marker(
+                [13.717034999999996, 79.58729333333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_7ecff69370ff4008095bcfcd23e40c2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73897e931e40273221e66b34a1095767 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3f1863b44533cbd90d50c7bc0e6764e3 = $(`<div id="html_3f1863b44533cbd90d50c7bc0e6764e3" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D34</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 60%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717035, 79.587293</p>       <a href="../../assets/q1_photos/041_D34.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/041_D34.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_73897e931e40273221e66b34a1095767.setContent(html_3f1863b44533cbd90d50c7bc0e6764e3);
+            
+        
+
+        marker_c9da44400283e81a823b0db07dba0858.bindPopup(popup_73897e931e40273221e66b34a1095767)
+        ;
+
+        
+    
+    
+            marker_c9da44400283e81a823b0db07dba0858.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D34<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/041_D34.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c9da44400283e81a823b0db07dba0858.setIcon(icon_7ecff69370ff4008095bcfcd23e40c2a);
+            
+    
+            var marker_60a06721ff611776b9e1186c86e3ef97 = L.marker(
+                [13.71739333333333, 79.5864933333333],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_4577b16215156d3f1e608c3a93845f06 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fc3df8a8e63f672dd9f190e60888935 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ece9dd54a28f69daaf9cf55162390799 = $(`<div id="html_ece9dd54a28f69daaf9cf55162390799" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D35</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 90%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717393, 79.586493</p>       <a href="../../assets/q1_photos/042_D35.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/042_D35.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_1fc3df8a8e63f672dd9f190e60888935.setContent(html_ece9dd54a28f69daaf9cf55162390799);
+            
+        
+
+        marker_60a06721ff611776b9e1186c86e3ef97.bindPopup(popup_1fc3df8a8e63f672dd9f190e60888935)
+        ;
+
+        
+    
+    
+            marker_60a06721ff611776b9e1186c86e3ef97.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D35<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/042_D35.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_60a06721ff611776b9e1186c86e3ef97.setIcon(icon_4577b16215156d3f1e608c3a93845f06);
+            
+    
+            var marker_f28f9c0341189212659bb1192d3632ee = L.marker(
+                [13.717466666666668, 79.58727833333334],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_30638c9ab51a9f62d5353cc5925860a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76ed06c9cd7525a718a93f31fcf02ed2 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_cdf5dcbfa84179e0728f8e46fb014cc1 = $(`<div id="html_cdf5dcbfa84179e0728f8e46fb014cc1" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D36</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 100%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717467, 79.587278</p>       <a href="../../assets/q1_photos/043_D36.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/043_D36.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_76ed06c9cd7525a718a93f31fcf02ed2.setContent(html_cdf5dcbfa84179e0728f8e46fb014cc1);
+            
+        
+
+        marker_f28f9c0341189212659bb1192d3632ee.bindPopup(popup_76ed06c9cd7525a718a93f31fcf02ed2)
+        ;
+
+        
+    
+    
+            marker_f28f9c0341189212659bb1192d3632ee.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D36<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/043_D36.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f28f9c0341189212659bb1192d3632ee.setIcon(icon_30638c9ab51a9f62d5353cc5925860a8);
+            
+    
+            var marker_46b70ec9b42b2560b58df90730da2935 = L.marker(
+                [13.71778333333333, 79.58715833333332],
+                {
+}
+            ).addTo(feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0);
+        
+    
+            var icon_fa610e49a9e9e28a6899d562a2fc2378 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "trash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1882d75176aa887a0cf37b8ea52f1f48 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d1f91fb3f80e5005cffbdd4c517d72fd = $(`<div id="html_d1f91fb3f80e5005cffbdd4c517d72fd" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;width:300px;max-width:80vw">       <div style="font-size:16px;font-weight:700;color:#172033">D37</div>       <div style="background:#ecfdf5;border-left:4px solid #10b981;padding:6px 8px;border-radius:6px;font-size:12px;margin:6px 0"><b>Collected by:</b> Sandeepan Podder (map author)</div>       <p style="margin:4px 0"><b>Field note:</b> 10%</p>       <p style="margin:4px 0;font-size:12px;color:#536178"><b>Coordinates:</b>          13.717783, 79.587158</p>       <a href="../../assets/q1_photos/044_D37.jpg" target="_blank" title="Open full-size photo"><img src="../../assets/q1_photos/044_D37.jpg" alt="Waste-bin photograph" loading="lazy" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;margin-top:6px" onerror="this.outerHTML='<em>Photo could not be loaded.</em>'"></a><p style="color:#087c70;font-size:12px;margin:4px 0"><b>Original field photo</b></p></div></div>`)[0];
+                popup_1882d75176aa887a0cf37b8ea52f1f48.setContent(html_d1f91fb3f80e5005cffbdd4c517d72fd);
+            
+        
+
+        marker_46b70ec9b42b2560b58df90730da2935.bindPopup(popup_1882d75176aa887a0cf37b8ea52f1f48)
+        ;
+
+        
+    
+    
+            marker_46b70ec9b42b2560b58df90730da2935.bindTooltip(
+                `<div>
+                     <div style="font:600 12px Arial;max-width:220px">D37<div style="font-weight:400;color:#536178">by Sandeepan Podder</div><img src="../../assets/q1_photos/044_D37.jpg" alt="preview" style="display:block;width:200px;height:115px;object-fit:cover;border-radius:8px;margin-top:6px"></div>
+                 </div>`,
+                {
+  "direction": "top",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46b70ec9b42b2560b58df90730da2935.setIcon(icon_fa610e49a9e9e28a6899d562a2fc2378);
+            
+    
+            feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0.addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var heat_map_6315543748328f3b153713134d942942 = L.heatLayer(
+                [[13.7223269, 79.59528309999999], [13.71441, 79.59445666666664], [13.714516666666665, 79.59435166666665], [13.715826666666665, 79.59188999999999], [13.715554999999997, 79.59177833333335], [13.715554999999997, 79.59177833333335], [13.715217620451613, 79.59189912711777], [13.7155382, 79.591505], [13.715280299999996, 79.591538], [13.714976399999998, 79.59122089999997], [13.715243333333332, 79.59126333333333], [13.71778, 79.5874533333333], [13.717796666666688, 79.58700202330834], [13.71657833333333, 79.588485], [13.715632339319392, 79.5885815674436], [13.715632339319392, 79.5885815674436], [13.714913573847529, 79.58924593325798], [13.714543333333326, 79.58960833333335], [13.714266666666662, 79.59012999999997], [13.712831666666665, 79.59143999999996], [13.71252333333333, 79.59192], [13.711161666666664, 79.59253333333332], [13.709994999999996, 79.59254166666666], [13.708334999999998, 79.59264], [13.70731666666666, 79.59276166666668], [13.707214999999998, 79.59280666666665], [13.707214999999998, 79.59280666666665], [13.708873333333331, 79.59384166666668], [13.708886666666668, 79.59383999999997], [13.709334999999998, 79.593225], [13.709826666666665, 79.5931533333333], [13.707769999999998, 79.59445666666664], [13.706865000000004, 79.59446833333332], [13.706943333333331, 79.594685], [13.707698100000002, 79.59490109999999], [13.707219999999992, 79.59435], [13.706031666666668, 79.5944233333333], [13.716963333333336, 79.59171166666667], [13.715118333333326, 79.59120833333333], [13.717448333333335, 79.58766166666665], [13.717034999999996, 79.58729333333333], [13.71739333333333, 79.5864933333333], [13.717466666666668, 79.58727833333334], [13.71778333333333, 79.58715833333332]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 18,
+}
+            );
+        
+    
+            map_3488241df3e002c17e509ed79b265073.fitBounds(
+                [[13.706031666666668, 79.5864933333333], [13.7223269, 79.59528309999999]],
+                {"padding": [30, 30]}
+            );
+        
+    
+            var layer_control_e6d9a1b9f0c2a835fa7a9ecbb41d3a04_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_757d668b6d2cb2b9286b6e42d843c697,
+                    "Light (CartoDB)" : tile_layer_aac370defeeb030cec45d51485c3a387,
+                    "Dark (CartoDB)" : tile_layer_a332427e03168d9e71c81deb48d54ed6,
+                    "Satellite (Esri)" : tile_layer_c72ac1f2086b029fa40fad82a05b4f6a,
+                },
+                overlays :  {
+                    "All observations (cluster)" : marker_cluster_271b26955346a9baabd639c00c7b50b1,
+                    "Sandeepan Podder (44) - acknowledged" : feature_group_sub_group_58a5e5f44dc4be4bd8eeb9cc2e2573f0,
+                    "Density heatmap" : heat_map_6315543748328f3b153713134d942942,
+                },
+            };
+            let layer_control_e6d9a1b9f0c2a835fa7a9ecbb41d3a04 = L.control.layers(
+                layer_control_e6d9a1b9f0c2a835fa7a9ecbb41d3a04_layers.base_layers,
+                layer_control_e6d9a1b9f0c2a835fa7a9ecbb41d3a04_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_3488241df3e002c17e509ed79b265073);
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_3488241df3e002c17e509ed79b265073);
+        
+    
+            var locate_control_50f6e1da40fa9d0d04d88957f61615e6 = L.control.locate(
+                {"position": "topleft"}
+            ).addTo(map_3488241df3e002c17e509ed79b265073);
+            
+        
+    
+            var measure_control_74bb7db6b71d662e805f1cf1aeffcc1c = new L.Control.Measure(
+                {
+  "position": "bottomleft",
+  "primaryLengthUnit": "meters",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_3488241df3e002c17e509ed79b265073.addControl(measure_control_74bb7db6b71d662e805f1cf1aeffcc1c);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var tile_layer_605941d3736a52aa968ba3877ee720d9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_15bf0a46d2a94adfe407d331679e7a5d = new L.Control.MiniMap(
+                tile_layer_605941d3736a52aa968ba3877ee720d9,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_3488241df3e002c17e509ed79b265073.addControl(mini_map_15bf0a46d2a94adfe407d331679e7a5d);
+        
+    
+            var mouse_position_f0dc4df4702d8f95e2855436a6091d71 = new L.Control.MousePosition(
+                {
+  "position": "bottomright",
+  "separator": " | ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "Coordinates:",
+}
+            );
+            mouse_position_f0dc4df4702d8f95e2855436a6091d71.options["latFormatter"] =
+                undefined;
+            mouse_position_f0dc4df4702d8f95e2855436a6091d71.options["lngFormatter"] =
+                undefined;
+            map_3488241df3e002c17e509ed79b265073.addControl(mouse_position_f0dc4df4702d8f95e2855436a6091d71);
+        
+</script>
+</html>

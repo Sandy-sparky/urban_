@@ -1,0 +1,26 @@
+HS524M Practical Assignment — hosted output links
+Student: Sandeepan Podder
+
+Q1 — interactive Folium map:
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/outputs/q1/q1_waste_bins_map.html
+
+Q1 — downloadable observation CSV:
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/outputs/q1/q1_waste_bins.csv
+
+Portfolio page (Q1 ready; Q2 will populate after Earth Engine run):
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
+
+Q2 — annual radiance/high-quartile map (available after running Q2):
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/outputs/q2_rajkot/annual_radiance_and_high_quartile_map.html
+
+Q2 — monthly animation (available after running Q2):
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/outputs/q2_rajkot/monthly_viirs_2020.gif
+
+Replace YOUR-USERNAME and YOUR-REPOSITORY after deployment. These are URL templates, not live published links.
+
+Dataset / documentation sources:
+VIIRS catalogue: https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG
+WorldPop catalogue: https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_pop
+Suggested urban-boundary release: https://github.com/ramSeraph/indian_admin_boundaries/releases/tag/urban
+Earth Engine Python quickstart: https://developers.google.com/earth-engine/guides/quickstart_python
+Assignment sheet: https://docs.google.com/spreadsheets/d/1nr45rqVjiKdCeuLjnRun049zkTcocnxJLB3ol_RWtmU/edit?gid=0#gid=0

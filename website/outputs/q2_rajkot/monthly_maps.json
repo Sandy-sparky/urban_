@@ -1,0 +1,74 @@
+[
+  {
+    "month": "2020-01",
+    "mean_radiance_nW_sr_cm2": 16.01497072534055,
+    "mean_cloud_free_observations_cf_cvg": 18.313210616807684,
+    "html_map": "monthly_2020-01.html"
+  },
+  {
+    "month": "2020-02",
+    "mean_radiance_nW_sr_cm2": 15.315796679491912,
+    "mean_cloud_free_observations_cf_cvg": 16.16683202790394,
+    "html_map": "monthly_2020-02.html"
+  },
+  {
+    "month": "2020-03",
+    "mean_radiance_nW_sr_cm2": 14.404581011823018,
+    "mean_cloud_free_observations_cf_cvg": 14.54165562546603,
+    "html_map": "monthly_2020-03.html"
+  },
+  {
+    "month": "2020-04",
+    "mean_radiance_nW_sr_cm2": 13.544908465539883,
+    "mean_cloud_free_observations_cf_cvg": 16.324648273567064,
+    "html_map": "monthly_2020-04.html"
+  },
+  {
+    "month": "2020-05",
+    "mean_radiance_nW_sr_cm2": 13.575757910044697,
+    "mean_cloud_free_observations_cf_cvg": 16.975325227551448,
+    "html_map": "monthly_2020-05.html"
+  },
+  {
+    "month": "2020-06",
+    "mean_radiance_nW_sr_cm2": 12.267973023640433,
+    "mean_cloud_free_observations_cf_cvg": 6.6623919246199215,
+    "html_map": "monthly_2020-06.html"
+  },
+  {
+    "month": "2020-07",
+    "mean_radiance_nW_sr_cm2": 12.008229257566837,
+    "mean_cloud_free_observations_cf_cvg": 5.165365345625528,
+    "html_map": "monthly_2020-07.html"
+  },
+  {
+    "month": "2020-08",
+    "mean_radiance_nW_sr_cm2": 8.330433222472209,
+    "mean_cloud_free_observations_cf_cvg": 2.4240991920922395,
+    "html_map": "monthly_2020-08.html"
+  },
+  {
+    "month": "2020-09",
+    "mean_radiance_nW_sr_cm2": 11.012193740786868,
+    "mean_cloud_free_observations_cf_cvg": 1.1703878080494965,
+    "html_map": "monthly_2020-09.html"
+  },
+  {
+    "month": "2020-10",
+    "mean_radiance_nW_sr_cm2": 12.823662789441354,
+    "mean_cloud_free_observations_cf_cvg": 7.8969748137375095,
+    "html_map": "monthly_2020-10.html"
+  },
+  {
+    "month": "2020-11",
+    "mean_radiance_nW_sr_cm2": 15.576205009865959,
+    "mean_cloud_free_observations_cf_cvg": 13.31624258185381,
+    "html_map": "monthly_2020-11.html"
+  },
+  {
+    "month": "2020-12",
+    "mean_radiance_nW_sr_cm2": 14.231522780413393,
+    "mean_cloud_free_observations_cf_cvg": 15.054809546992367,
+    "html_map": "monthly_2020-12.html"
+  }
+]
